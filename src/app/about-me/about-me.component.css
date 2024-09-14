@@ -1,0 +1,57 @@
+h1, h2, h3 {
+  text-align: justify;
+}
+
+.about-me {
+  padding: 8%;
+  background-color: #052659;
+  color: #fff;
+  width: 100%;
+}
+
+.education, .experience {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+
+/* Media Queries */
+
+/* Mobile devices (min-width: 600px) */
+@media (max-width: 600px) {
+  .about-me {
+    padding: 5%;
+  }
+  
+  .education, .experience {
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  
+  li {
+    margin-bottom: 8px;
+  }
+}
+
+/* Mobile devices (landscape) */
+@media (max-width: 768px) and (orientation: landscape) {
+  .about-me {
+    padding: 4%;
+  }
+  
+  .education, .experience {
+    margin-bottom: 12px;
+  }
+}
+

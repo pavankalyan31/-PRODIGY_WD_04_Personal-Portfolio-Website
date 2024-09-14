@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <!-- Contact Information Section -->
+  <div class="mt-5">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:pavankalyanssmunagala@gmail.com">pavankalyanssmunagala@gmail.com</a></p>
+    <p>Phone: <a href="tel:+918309307344">8309307344</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/pavan-kalyan-muangala-4771081a1" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
+    <p>GitHub: <a href="https://github.com/pavankalyan31" target="_blank" rel="noopener noreferrer">GitHub Profile</a></p>
+    <p>YouTube: <a href="https://www.youtube.com/@PavanKalyanWOLF" target="_blank" rel="noopener noreferrer">YouTube Channel</a></p>
+  </div>
+  <!-- Contact Form Section -->
+  <div class="container-fluid mt-5">
+  <h2>Send me a message</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" formControlName="name" class="form-control" [ngClass]="{'is-invalid': contactForm.get('name')?.invalid && (contactForm.get('name')?.touched || contactForm.get('name')?.dirty)}">
+      <div *ngIf="contactForm.get('name')?.invalid && (contactForm.get('name')?.touched || contactForm.get('name')?.dirty)" class="invalid-feedback">
+        Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" class="form-control" [ngClass]="{'is-invalid': contactForm.get('email')?.invalid && (contactForm.get('email')?.touched || contactForm.get('email')?.dirty)}">
+      <div *ngIf="contactForm.get('email')?.invalid && (contactForm.get('email')?.touched || contactForm.get('email')?.dirty)" class="invalid-feedback">
+        <div *ngIf="contactForm.get('email')?.errors?.['required']">Email is required</div>
+        <div *ngIf="contactForm.get('email')?.errors?.['email']">Invalid email format</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" formControlName="subject" class="form-control" [ngClass]="{'is-invalid': contactForm.get('subject')?.invalid && (contactForm.get('subject')?.touched || contactForm.get('subject')?.dirty)}">
+      <div *ngIf="contactForm.get('subject')?.invalid && (contactForm.get('subject')?.touched || contactForm.get('subject')?.dirty)" class="invalid-feedback">
+        Subject is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" formControlName="message" class="form-control" rows="4" [ngClass]="{'is-invalid': contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || contactForm.get('message')?.dirty)}"></textarea>
+      <div *ngIf="contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || contactForm.get('message')?.dirty)" class="invalid-feedback">
+        Message is required
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+</div>
+</div>
+
+<app-footer></app-footer>

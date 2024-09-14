@@ -1,0 +1,44 @@
+<div>
+  <!-- Static Introduction -->
+  <div class="about-me">
+    <h2>About Me</h2>
+    <p>{{ profileDescription }}</p>
+    
+    <section class="education">
+      <h3>Education</h3>
+      <ul>
+        <li *ngFor="let edu of education">
+          <strong>{{ edu.degree }}</strong><br>
+          {{ edu.institution }}<br>
+          <span *ngIf="edu.cgpa">CGPA: {{ edu.cgpa }}</span>
+          <span *ngIf="edu.percentage">Percentage: {{ edu.percentage }}</span>
+          <span *ngIf="edu.gpa">GPA: {{ edu.gpa }}</span>
+        </li>
+      </ul>
+    </section>
+
+  <!-- Dynamic Skills Section -->
+  <section class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li *ngFor="let skill of skills">
+        <strong>{{ skill.category }}:</strong> {{ skill.description }}
+      </li>
+    </ul>
+  </section>
+
+  <!-- Dynamic Professional Experience Section -->
+  <section class="experience">
+    <h2>Professional Experience</h2>
+    <div *ngFor="let exp of experience">
+      <h3>{{ exp.role }}</h3>
+      <strong>{{ exp.company }}</strong>
+      <ul>
+        <li *ngFor="let resp of exp.responsibilities">{{ resp }}</li>
+      </ul>
+    </div>
+  </section>
+</div>
+</div>
+
+<app-footer></app-footer>

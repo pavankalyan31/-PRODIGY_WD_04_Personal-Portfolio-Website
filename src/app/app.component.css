@@ -1,0 +1,45 @@
+body {
+  color: #ffff;
+}
+
+a:hover {
+  color: #1230f0d1;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: 10px;
+}
+
+
+
+/* Media Queries */
+
+/* Mobile devices (max-width: 600px) */
+@media (max-width: 600px) {
+  a:hover {
+    color: #1230f0d1; 
+  }
+
+  .glass {
+    margin: 5px; 
+    border-radius: 6px; 
+  }
+}
+
+/* Mobile devices (landscape) */
+@media (max-width: 768px) and (orientation: landscape) {
+  a:hover {
+    color: #1230f0d1; 
+  }
+
+  .glass {
+    margin: 7px; 
+    border-radius: 8px; 
+  }
+}
